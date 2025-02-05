@@ -17,10 +17,10 @@ response = requests.get(url)
 # 请求目录页
 soup = BeautifulSoup(response.content, features="lxml")
 # 解析目录页
-xiyouji_chapters = soup.find_all('div', class_='p-3 my-2 bg-white rounded')[1].ul.children
+SSXY_chapters = soup.find_all('div', class_='p-3 my-2 bg-white rounded')[1].ul.children
 
 # 获取章回内容
-for cpt in xiyouji_chapters:
+for cpt in SSXY_chapters:
     file.write(cpt.text + "\n")
     if cpt !='\n' and cpt is not None:
         link = cpt.a.get('href')
