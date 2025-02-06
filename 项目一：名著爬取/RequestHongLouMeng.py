@@ -17,7 +17,7 @@ response = requests.get(url)
 # 请求目录页
 soup = BeautifulSoup(response.content, features="lxml")
 # 解析目录页
-HongLou_chapters = soup.find('div', class_='p-3 my-2 bg-white rounded').ul.children
+HongLou_chapters = soup.find('div', class_='p-2 my-2 bg-white rounded').ul.children
 
 # 获取章回内容
 for cpt in HongLou_chapters:
